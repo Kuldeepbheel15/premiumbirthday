@@ -1,0 +1,5 @@
+# Buy Me a Coffee (International cards and payments)
+buy_me_a_coffee: kuldeepheel
+
+# Razorpay (Indian UPI, GPay, PhonePe)
+custom: ["https://rzp.io/l/KULDEEP15"]
