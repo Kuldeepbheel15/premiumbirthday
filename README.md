@@ -56,7 +56,7 @@ To obtain your unlocked, white-label version tailored specifically with your pho
 
 ### 💳 Instant Order & Sponsorship:
 1. **Domestic (India - UPI / GPay / PhonePe / Cards):** [razorpay.me/@KULDEEP15](https://razorpay.me/@KULDEEP15)
-2. **International (Global Cards & PayPal):** [buymeacoffee.com/kushaldeep01](https://www.buymeacoffee.com/kuldeelbhee15)
+2. **International (Global Cards & PayPal):** [buymeacoffee.com/kuldeepbheel15](https://www.buymeacoffee.com/kuldeelbhee15)
 
 ---
 
