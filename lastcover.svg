@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffccd5" />
+      <stop offset="50%" stop-color="#ffb3c1" />
+      <stop offset="100%" stop-color="#ff8fab" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff0f3" />
+      <stop offset="100%" stop-color="#ffe5ec" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+
+  <!-- Inner Frame -->
+  <rect x="25" y="25" width="350" height="550" rx="20" fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="8 6" opacity="0.8" />
+  <rect x="35" y="35" width="330" height="530" rx="16" fill="none" stroke="#fff0f3" stroke-width="1.5" opacity="0.6" />
+
+  <!-- Heart Icon Center -->
+  <g transform="translate(200, 220) scale(1.4)">
+    <path d="M 0 -20 C -25 -50, -60 -20, -60 10 C -60 45, 0 75, 0 95 C 0 75, 60 45, 60 10 C 60 -20, 25 -50, 0 -20 Z" fill="#ff4d6d" opacity="0.9" />
+    <path d="M 0 -15 C -20 -40, -50 -15, -50 10 C -50 38, 0 65, 0 80 C 0 65, 50 38, 50 10 C 50 -15, 20 -40, 0 -15 Z" fill="#ffffff" opacity="0.25" />
+  </g>
+
+  <!-- Text -->
+  <text x="200" y="380" font-family="'Brush Script MT', 'Dancing Script', cursive, sans-serif" font-size="38" font-weight="bold" fill="#590d22" text-anchor="middle">
+    Forever &amp; Always
+  </text>
+  
+  <text x="200" y="420" font-family="'Poppins', sans-serif" font-size="16" font-weight="600" fill="#800f2f" letter-spacing="4" text-anchor="middle">
+    TO BE CONTINUED... ❤️
+  </text>
+
+  <!-- Little Sparkles -->
+  <circle cx="90" cy="120" r="4" fill="#ffffff" opacity="0.8" />
+  <circle cx="310" cy="140" r="3" fill="#ffffff" opacity="0.8" />
+  <circle cx="80" cy="480" r="3.5" fill="#ffffff" opacity="0.8" />
+  <circle cx="320" cy="470" r="4.5" fill="#ffffff" opacity="0.8" />
+</svg>

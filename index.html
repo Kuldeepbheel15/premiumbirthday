@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title id="pageTitle">Happy Birthday Usha! ❤️</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff8fab">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="profile.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800&family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root { --color-black: #3a2228; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Shantell Sans', cursive, sans-serif; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
+    body { background: radial-gradient(circle at 50% 20%, #ffffff 0%, #fff2f6 45%, #fcecf4 100%); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow-x: hidden; padding: 16px; position: relative; }
+    .card-shadow { box-shadow: rgba(180, 150, 170, 0.25) -2px -3px 12px inset, rgba(194, 156, 175, 0.35) 3px 3px 22px, rgba(180, 160, 170, 0.25) 5px 5px 5px, rgba(200, 180, 190, 0.3) -2px -3px 4px inset, rgba(230, 210, 220, 0.25) -10px -10px 12px inset; border: 1.5px solid rgba(255, 220, 232, 0.85); }
+    .btn-theme { background: linear-gradient(135deg, #fff7f9 0%, #ffe6ed 55%, #ffd4e0 100%); color: #9b3c49; border: 1.5px solid rgba(255, 175, 198, 0.85); box-shadow: rgba(255, 255, 255, 0.95) 0px 2px 4px inset, 0 4px 16px rgba(255, 143, 171, 0.35); transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+    .btn-pulse { animation: gentleBreathing 2.2s ease-in-out infinite alternate !important; }
+    @keyframes gentleBreathing { 0% { transform: scale(1); box-shadow: rgba(255, 255, 255, 0.9) 0px 2px 4px inset, 0 4px 14px rgba(255, 143, 171, 0.4), 0 0 14px rgba(255, 194, 209, 0.45); } 100% { transform: scale(1.04); box-shadow: rgba(255, 255, 255, 0.95) 0px 2px 4px inset, 0 8px 24px rgba(255, 143, 171, 0.65), 0 0 24px rgba(255, 182, 193, 0.75); } }
+    .gif-box-shadow { box-shadow: rgba(160, 130, 150, 0.25) 3px 2px 6px inset, rgba(200, 170, 190, 0.3) -2px -2px 6px; }
+    .screen-fade { animation: screenIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    @keyframes screenIn { 0% { opacity: 0; transform: translateY(18px) scale(0.97); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+    .light-wire { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-around; pointer-events: none; z-index: 70; padding: 0 12px; }
+    .light-strand { display: flex; flex-direction: column; align-items: center; }
+    .light-cord { width: 1.5px; background: rgba(190, 150, 165, 0.45); }
+    .light-bulb { width: 15px; height: 20px; border-radius: 50% 50% 45% 45%; animation: bulbGlow 2.4s ease-in-out infinite alternate; }
+    .bulb-warm { background: radial-gradient(circle at 35% 35%, #ffffff 20%, #ffefa6 65%, #ffd13b 100%); box-shadow: 0 0 16px 5px rgba(255, 234, 167, 0.95), 0 0 28px 8px rgba(255, 210, 80, 0.45); }
+    .bulb-pink { background: radial-gradient(circle at 35% 35%, #ffffff 20%, #ffc0cf 65%, #ff8fab 100%); box-shadow: 0 0 16px 5px rgba(255, 184, 198, 0.95), 0 0 28px 8px rgba(255, 143, 171, 0.45); animation-delay: 0.8s; }
+    .bulb-lavender { background: radial-gradient(circle at 35% 35%, #ffffff 20%, #ebd0ff 65%, #d084ff 100%); box-shadow: 0 0 16px 5px rgba(228, 193, 249, 0.95), 0 0 28px 8px rgba(208, 132, 255, 0.45); animation-delay: 1.6s; }
+    @keyframes bulbGlow { 0% { opacity: 0.82; transform: scale(0.96); } 100% { opacity: 1; transform: scale(1.05); } }
+    .balloon-body { border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%; box-shadow: rgba(0, 0, 0, 0.18) -6px -10px 16px inset, rgba(0, 0, 0, 0.22) 0px 10px 22px; }
+    .balloons-group-container { position: absolute; inset: 0; width: 100%; height: 100%; animation: unifiedSway 4s ease-in-out infinite alternate; transform-origin: bottom center; pointer-events: none; }
+    @keyframes unifiedSway { 0% { transform: translateX(-3px) rotate(-1.2deg); } 100% { transform: translateX(3px) rotate(1.2deg); } }
+    .balloon-word-on-string { position: absolute; transform: translate(-50%, -100%) scale(0.7); text-align: center; pointer-events: none; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); opacity: 0; z-index: 30; white-space: nowrap; padding-bottom: 4px; }
+    .balloon-word-on-string.visible { opacity: 1; transform: translate(-50%, -100%) scale(1); }
+    .cake-board { margin: 10px 0 8px; display: flex; flex-direction: column; align-items: center; position: relative; }
+    .candles-row { display: flex; gap: 14px; align-items: flex-end; margin-bottom: -4px; z-index: 20; }
+    .candle-unit { display: flex; flex-direction: column; align-items: center; cursor: pointer; }
+    .flame-wrapper { position: relative; width: 16px; height: 26px; display: flex; justify-content: center; align-items: flex-end; }
+    .candle-flame { width: 14px; height: 24px; background: radial-gradient(ellipse at bottom, #ffffff 0%, #ffe5ec 35%, #ff8fab 70%, #fb6f92 100%); border-radius: 50% 50% 35% 35%; box-shadow: 0 0 14px 5px rgba(255, 143, 171, 0.85), 0 0 24px 8px rgba(255, 194, 209, 0.6); animation: flameFlicker 0.6s infinite alternate ease-in-out; margin-bottom: 2px; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .candle-flame.blown { opacity: 0; transform: scale(0.1) translateY(-14px); filter: blur(4px); pointer-events: none; }
+    @keyframes flameFlicker { 0% { transform: scale(0.95) rotate(-3deg); } 100% { transform: scale(1.12) rotate(3deg); } }
+    .smoke { position: absolute; width: 8px; height: 8px; background: rgba(220, 180, 190, 0.7); border-radius: 50%; top: 0; opacity: 0; pointer-events: none; }
+    .smoke.active { animation: riseSmoke 0.9s forwards ease-out; }
+    @keyframes riseSmoke { 0% { opacity: 0.8; transform: translateY(0) scale(0.8); } 50% { opacity: 0.5; transform: translateY(-16px) scale(1.6); } 100% { opacity: 0; transform: translateY(-34px) scale(2.4); } }
+    .wick { width: 2.5px; height: 6px; background: #5a3c42; }
+    .candle-stick { width: 9px; height: 32px; background: repeating-linear-gradient(45deg, #ffd166, #ffd166 4px, #ff8fab 4px, #ff8fab 8px); border-radius: 3px; border: 1.5px solid #6b404d; }
+    .cake-tier-top { width: 142px; height: 38px; background: linear-gradient(135deg, #fffafd 0%, #ffedf2 60%, #ffdce5 100%); border-radius: 12px 12px 4px 4px; border: 2.5px solid #6b404d; display: flex; align-items: center; justify-content: space-around; font-size: 11px; box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8); }
+    .cake-tier-mid { width: 232px; height: 44px; background: linear-gradient(135deg, #fff0f5 0%, #ffdfe8 50%, #fbd1dc 100%); border-radius: 14px 14px 6px 6px; border: 2.5px solid #6b404d; margin-top: -2px; display: flex; align-items: center; justify-content: center; color: #690a20; font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 2px; padding: 0 10px; white-space: nowrap; box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.7); }
+    .cake-tier-base { width: 292px; height: 50px; background: linear-gradient(135deg, #fff5f8 0%, #fedde6 50%, #f8c9d7 100%); border-radius: 16px 16px 8px 8px; border: 2.5px solid #6b404d; margin-top: -2px; display: flex; align-items: center; justify-content: center; padding: 0 12px; box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.7); }
+    .satrangi-anniversary-text { font-family: 'Dancing Script', cursive; font-size: 1.45rem; font-weight: 700; background: linear-gradient(90deg, #ff1493, #a855f7, #06b6d4, #10b981, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 1.5px 3px rgba(255, 105, 180, 0.35)); white-space: nowrap; }
+    .cake-platter { width: 320px; height: 12px; background: linear-gradient(90deg, #f7cad0 0%, #ffb3c6 30%, #ffd6e0 50%, #e8c2ca 70%, #d8bbff 100%); border: 2px solid #85485d; border-radius: 20px; margin-top: -2px; box-shadow: 0 4px 14px rgba(255, 175, 204, 0.45); }
+    .love-note-modal { position: absolute; bottom: -100%; left: 0; width: 100%; height: 100%; background: rgba(255, 248, 252, 0.98); border-radius: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; transition: bottom 0.6s cubic-bezier(0.16, 1, 0.3, 1); z-index: 50; }
+    .love-note-modal.open { bottom: 0; }
+    .book-card-bg { background: radial-gradient(circle at 50% 25%, #ffffff 0%, #fff1f6 50%, #fde4ef 100%) !important; border: 2px solid rgba(255, 182, 210, 0.85) !important; box-shadow: 0 18px 45px rgba(230, 145, 185, 0.3), inset 0 0 25px rgba(255, 255, 255, 0.95) !important; position: relative; }
+    .book-wrapper { position: relative; width: 100%; max-width: 440px; display: flex; justify-content: center; perspective: 2200px; margin: 4px auto; }
+    .book-stage { position: relative; width: clamp(170px, 46vw, 260px); height: clamp(270px, 62vw, 370px); transform-style: preserve-3d; transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1); z-index: 10; }
+    .page { position: absolute; inset: 0; transform-style: preserve-3d; transform-origin: left center; transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 8px 16px 16px 8px; box-shadow: 0 10px 28px rgba(180, 120, 155, 0.22), 0 2px 8px rgba(0, 0, 0, 0.06); cursor: pointer; }
+    .front, .back { position: absolute; inset: 0; backface-visibility: hidden; overflow: hidden; background: linear-gradient(145deg, #fffafd 0%, #fff3f8 50%, #fde7f3 100%); display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 10px 8px; border: 1.5px solid rgba(240, 180, 210, 0.75); box-shadow: inset 0 0 14px rgba(255, 215, 230, 0.4); }
+    .front { border-radius: 8px 16px 16px 8px; background-image: linear-gradient(to right, rgba(160, 90, 120, 0.12) 0%, rgba(160, 90, 120, 0.02) 6%, transparent 12%); }
+    .back { border-radius: 16px 8px 8px 16px; transform: rotateY(180deg); background-image: linear-gradient(to left, rgba(160, 90, 120, 0.12) 0%, rgba(160, 90, 120, 0.02) 6%, transparent 12%); }
+    .custom-royal-cover { background: linear-gradient(140deg, #ffe5ee 0%, #fbd5e8 45%, #eed2f7 100%) !important; padding: 9px !important; display: flex !important; justify-content: center !important; align-items: center !important; border: 2.5px solid #e2a6cf !important; box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.9), 0 8px 25px rgba(210, 130, 175, 0.28) !important; }
+    .cover-inner-frame { width: 100%; height: 100%; background: linear-gradient(180deg, #fffbfe 0%, #fff2f8 50%, #fce9f5 100%); border: 1.8px dashed #c47ec9; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 10px 8px; box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.95), 0 2px 10px rgba(220, 160, 195, 0.2); }
+    .cov-name { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 800; background: linear-gradient(135deg, #7c1a60 0%, #a82e79 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; line-height: 1.15; filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.9)); }
+    .cov-photo-box { width: 92%; height: 50%; border: 3px solid #ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 16px rgba(186, 104, 200, 0.25), 0 0 12px rgba(255, 255, 255, 0.9); background: #fff; }
+    .cov-photo-box img { width: 100%; height: 100%; object-fit: cover; }
+    .cov-footer { font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 700; color: #8c2b74; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9); }
+    .leather-cover { background: linear-gradient(145deg, #fbe3ed 0%, #f0d4f7 100%); border: 2px solid #dfa5cc !important; padding: 0; }
+    .lastcover-box { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: linear-gradient(180deg, #fff8fc 0%, #f8e4f3 100%); }
+    .lastcover-box img { width: 100%; height: 100%; object-fit: cover; }
+    .book-photo-box { width: 100%; flex: 1; border-radius: 12px; overflow: hidden; border: 2px solid #ffffff; background: #fff; margin-bottom: 6px; box-shadow: 0 4px 12px rgba(200, 130, 175, 0.22); }
+    .book-photo-box img { width: 100%; height: 100%; object-fit: cover; }
+    .caption-card { width: 98%; height: 46px; background: linear-gradient(135deg, #fffbff 0%, #faeef8 100%); border: 1.5px solid #eccfe8; border-radius: 10px; padding: 2px 6px; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 2px 8px rgba(210, 150, 190, 0.2); }
+    .book-caption { font-family: 'Dancing Script', cursive; font-size: 1.1rem; color: #7e236b; text-align: center; line-height: 1.2; font-weight: 700; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .btn-locked { opacity: 0.45; cursor: not-allowed !important; filter: grayscale(0.5); pointer-events: none; box-shadow: none !important; }
+    #lockToast { position: fixed; bottom: 85px; background: rgba(58, 34, 40, 0.9); color: #fff; padding: 8px 18px; border-radius: 20px; font-size: 0.88rem; display: none; z-index: 2000; animation: fadeInOut 2.5s forwards; }
+    @keyframes fadeInOut { 0% { opacity: 0; transform: translateY(10px); } 15% { opacity: 1; transform: translateY(0); } 85% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-10px); } }
+    .signature-badge { position: fixed; bottom: 12px; right: 12px; padding: 6px 14px; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(8px); border: 1px solid rgba(255, 143, 171, 0.4); box-shadow: 0 4px 15px rgba(255, 143, 171, 0.25); display: flex; align-items: center; gap: 6px; font-size: 11px; color: #9b3c49; pointer-events: none; z-index: 50; border-radius: 9999px; font-weight: 500; }
+    .video-heartbeat { display: inline-flex; align-items: center; justify-content: center; animation: videoHeartThrob 1.25s infinite cubic-bezier(0.215, 0.61, 0.355, 1); transform-origin: center center; }
+    @keyframes videoHeartThrob { 0% { transform: scale(0.95); } 12% { transform: scale(1.38); } 22% { transform: scale(1.06); } 34% { transform: scale(1.48); } 50% { transform: scale(0.95); } 100% { transform: scale(0.95); } }
+  </style>
+</head>
+<body class="antialiased select-none">
+
+  <div class="light-wire">
+    <div class="light-strand"><div class="light-cord h-6"></div><div class="light-bulb bulb-warm"></div></div>
+    <div class="light-strand"><div class="light-cord h-11"></div><div class="light-bulb bulb-pink"></div></div>
+    <div class="light-strand"><div class="light-cord h-7"></div><div class="light-bulb bulb-lavender"></div></div>
+    <div class="light-strand"><div class="light-cord h-13"></div><div class="light-bulb bulb-warm"></div></div>
+    <div class="light-strand"><div class="light-cord h-8"></div><div class="light-bulb bulb-pink"></div></div>
+    <div class="light-strand"><div class="light-cord h-12"></div><div class="light-bulb bulb-warm"></div></div>
+    <div class="light-strand"><div class="light-cord h-6"></div><div class="light-bulb bulb-lavender"></div></div>
+  </div>
+
+  <main id="screen-balloons" class="flex flex-col items-center justify-center w-full max-w-[440px] screen-fade">
+    <div class="h-[55vh] min-h-[470px] bg-[#fff8fc] p-7 rounded-[60px] card-shadow min-w-48 w-full max-w-110 relative flex flex-col items-center gap-4 overflow-hidden">
+      <div class="text-xl md:text-2xl text-center text-[#9b3c49] font-semibold will-change-transform z-20">Pop all 4 balloons</div>
+      <div class="balloons-group-container absolute inset-0 w-full h-full pointer-events-none">
+        <button id="b-1" class="absolute -translate-x-1/2 cursor-pointer z-20 pointer-events-auto" aria-label="Balloon 1" style="left: 20%; top: 18%;" onclick="pop(1, 20, 28)">
+          <div class="relative flex flex-col items-center">
+            <div class="h-24 w-20 md:h-28 md:w-22 balloon-body z-10" style="background: radial-gradient(60% 60% at 35% 35%, rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0.6) 26%, transparent 27%), linear-gradient(145deg, rgb(255, 143, 171), rgba(255, 255, 255, 0.3));"></div>
+            <div class="mx-auto -mt-1 h-3 w-3 rotate-45 relative z-10" style="background: rgb(255, 143, 171);"></div>
+          </div>
+        </button>
+        <div id="w-1" class="balloon-word-on-string" style="left: 20%; top: 40.2%;"><span id="txt-word1" class="text-xl md:text-2xl font-bold text-[#832675] drop-shadow-sm">You</span></div>
+
+        <button id="b-2" class="absolute -translate-x-1/2 cursor-pointer z-20 pointer-events-auto" aria-label="Balloon 2" style="left: 40%; top: 24%;" onclick="pop(2, 40, 34)">
+          <div class="relative flex flex-col items-center">
+            <div class="h-24 w-20 md:h-28 md:w-22 balloon-body z-10" style="background: radial-gradient(60% 60% at 35% 35%, rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0.6) 26%, transparent 27%), linear-gradient(145deg, rgb(255, 194, 209), rgba(255, 255, 255, 0.3));"></div>
+            <div class="mx-auto -mt-1 h-3 w-3 rotate-45 relative z-10" style="background: rgb(255, 194, 209);"></div>
+          </div>
+        </button>
+        <div id="w-2" class="balloon-word-on-string" style="left: 40%; top: 46.2%;"><span id="txt-word2" class="text-xl md:text-2xl font-bold text-[#832675] drop-shadow-sm">are</span></div>
+
+        <button id="b-3" class="absolute -translate-x-1/2 cursor-pointer z-20 pointer-events-auto" aria-label="Balloon 3" style="left: 60%; top: 24%;" onclick="pop(3, 60, 34)">
+          <div class="relative flex flex-col items-center">
+            <div class="h-24 w-20 md:h-28 md:w-22 balloon-body z-10" style="background: radial-gradient(60% 60% at 35% 35%, rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0.6) 26%, transparent 27%), linear-gradient(145deg, rgb(255, 146, 137), rgba(255, 255, 255, 0.25));"></div>
+            <div class="mx-auto -mt-1 h-3 w-3 rotate-45 relative z-10" style="background: rgb(255, 146, 137);"></div>
+          </div>
+        </button>
+        <div id="w-3" class="balloon-word-on-string" style="left: 60%; top: 46.2%;"><span id="txt-word3" class="text-xl md:text-2xl font-bold text-[#832675] drop-shadow-sm">my</span></div>
+
+        <button id="b-4" class="absolute -translate-x-1/2 cursor-pointer z-20 pointer-events-auto" aria-label="Balloon 4" style="left: 80%; top: 18%;" onclick="pop(4, 80, 28)">
+          <div class="relative flex flex-col items-center">
+            <div class="h-24 w-20 md:h-28 md:w-22 balloon-body z-10" style="background: radial-gradient(60% 60% at 35% 35%, rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0.6) 26%, transparent 27%), linear-gradient(145deg, rgb(233, 168, 255), rgba(255, 255, 255, 0.3));"></div>
+            <div class="mx-auto -mt-1 h-3 w-3 rotate-45 relative z-10" style="background: rgb(233, 168, 255);"></div>
+          </div>
+        </button>
+        <div id="w-4" class="balloon-word-on-string" style="left: 80%; top: 40.2%;"><span id="txt-word4" class="text-xl md:text-2xl font-bold text-[#832675] drop-shadow-sm">World</span></div>
+
+        <svg class="absolute inset-0 w-full h-full z-10" viewBox="0 0 337 441" preserveAspectRatio="none">
+          <path d="M 67.34091377258301 177.340913772583 C 67.17399451663755 257.340913772583, 168.41654037202727 308.7, 168.5 441" stroke="rgba(0,0,0,0.25)" stroke-width="1.4" fill="none"></path>
+          <path d="M 134.68750953674316 203.7897663116455 C 140.6542854179498 283.7897663116455, 171.4833879406033 308.7, 168.5 441" stroke="rgba(0,0,0,0.25)" stroke-width="1.4" fill="none"></path>
+          <path d="M 202.0340976715088 203.7897663116455 C 208.64874246188293 283.7897663116455, 171.80732239518707 308.7, 168.5 441" stroke="rgba(0,0,0,0.25)" stroke-width="1.4" fill="none"></path>
+          <path d="M 269.3807010650635 177.340913772583 C 270.5617408493325 257.340913772583, 169.09051989213452 308.7, 168.5 441" stroke="rgba(0,0,0,0.25)" stroke-width="1.4" fill="none"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="mt-8 flex justify-center z-40">
+      <button id="nextBtn" class="px-10 py-3.5 btn-theme font-bold text-lg rounded-full btn-pulse opacity-0 translate-y-3 pointer-events-none transition-all duration-300 active:scale-95 cursor-pointer" onclick="goToScreen(2)">Next →</button>
+    </div>
+  </main>
+
+  <main id="screen-cake" class="hidden flex-col items-center justify-center w-full max-w-[440px]">
+    <div class="h-[55vh] min-h-[470px] bg-[#fff8fc] p-6 rounded-[60px] card-shadow w-full max-w-110 relative flex flex-col items-center justify-between overflow-hidden">
+      <div class="text-center mt-1">
+        <div class="text-xl md:text-2xl text-[#9b3c49] font-semibold">Blow out the candle 🕯️</div>
+        <div id="cakeSubtitle" class="text-xs text-[#973b88] font-medium mt-1 tracking-wide">Happy Birthday, my dear Usha! ✨</div>
+      </div>
+      <div class="cake-board">
+        <div class="candles-row">
+          <div class="candle-unit" onclick="extinguishCandle(1)"><div class="flame-wrapper"><div class="smoke" id="smoke1"></div><div class="candle-flame" id="flame1"></div></div><div class="wick"></div><div class="candle-stick"></div></div>
+          <div class="candle-unit" onclick="extinguishCandle(2)"><div class="flame-wrapper"><div class="smoke" id="smoke2"></div><div class="candle-flame" id="flame2"></div></div><div class="wick"></div><div class="candle-stick"></div></div>
+          <div class="candle-unit" onclick="extinguishCandle(3)"><div class="flame-wrapper"><div class="smoke" id="smoke3"></div><div class="candle-flame" id="flame3"></div></div><div class="wick"></div><div class="candle-stick"></div></div>
+          <div class="candle-unit" onclick="extinguishCandle(4)"><div class="flame-wrapper"><div class="smoke" id="smoke4"></div><div class="candle-flame" id="flame4"></div></div><div class="wick"></div><div class="candle-stick"></div></div>
+          <div class="candle-unit" onclick="extinguishCandle(5)"><div class="flame-wrapper"><div class="smoke" id="smoke5"></div><div class="candle-flame" id="flame5"></div></div><div class="wick"></div><div class="candle-stick"></div></div>
+        </div>
+        <div class="cake-tier-top"><span>🍓</span><span>✨</span><span>💍</span><span>✨</span><span>🍓</span></div>
+        <div class="cake-tier-mid" id="cake-tier-date">25 November 2003</div>
+        <div class="cake-tier-base"><span class="satrangi-anniversary-text" id="cakeQueenTextBox">Happy Birthday My Queen 💖</span></div>
+        <div class="cake-platter"></div>
+      </div>
+      <div id="cakeInstructionBox" class="w-full px-4 mb-2">
+        <div id="instructionText" class="text-xs text-center text-[#77537e]/90 flex items-center justify-center gap-1.5 py-2">
+          <span>💨</span><span>Blow hard near <b>the mic</b> (or tap the flame)</span>
+        </div>
+      </div>
+      <div id="loveNoteModal" class="love-note-modal">
+        <div class="text-4xl mb-1">💌</div>
+        <div id="modalTitle" class="text-lg font-bold text-[#9b3c49] mb-1">My Dearest Usha,</div>
+        <p id="modalMessage" class="text-xs text-[#77537e] leading-relaxed mb-3">Happy 23rd Birthday to the love of my life! You make every single moment brighter, sweeter, and full of happiness. I am truly blessed to have you forever with me.</p>
+        <div id="modalFooterBadge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fce7eb] text-[#9b3c49] font-bold text-xs shadow-sm mb-4"><span>✨ Always & Forever Yours ✨</span></div>
+        <button class="px-7 py-2 btn-theme font-bold text-xs rounded-full btn-pulse active:scale-95 transition-all cursor-pointer" onclick="closeLoveNote()">Close ❤️</button>
+      </div>
+    </div>
+    <div class="mt-8 flex justify-center">
+      <button id="cakeNextBtn" class="px-10 py-3.5 btn-theme font-bold text-lg rounded-full btn-pulse opacity-0 translate-y-3 pointer-events-none transition-all duration-300 active:scale-95 cursor-pointer" onclick="handleBottomButtonClick()">Forever With You ❤️</button>
+    </div>
+  </main>
+
+  <main id="screen-gift" class="hidden flex-col items-center justify-center w-full max-w-[440px]">
+    <div class="bg-[#fff8fc] p-7 rounded-[60px] card-shadow min-w-48 w-full max-w-110 relative flex flex-col items-center gap-4 my-10">
+      <h2 class="text-2xl md:text-3xl font-semibold text-[#9b3c49] leading-tight">With All My Love 💌</h2>
+      <div class="flex flex-col items-center py-4 bg-gradient-to-b from-white/80 to-[#ffccd3] rounded-[40px] gif-box-shadow w-full overflow-hidden pointer-events-none select-none">
+        <div class="flex justify-center overflow-hidden w-full max-h-40">
+          <img loading="lazy" alt="Gift box" class="h-36 md:h-40 object-cover scale-110 -translate-y-1" style="mix-blend-mode: multiply;" src="gift.gif" />
+        </div>
+      </div>
+    </div>
+    <div class="mt-2 flex justify-center">
+      <button class="px-10 py-3.5 btn-theme font-bold text-lg rounded-full btn-pulse active:scale-95 transition-all duration-300 flex items-center gap-2 cursor-pointer" onclick="openGift()">Tap to open 🎁</button>
+    </div>
+  </main>
+
+  <main id="screen-book" class="hidden flex-col items-center justify-center w-full max-w-[440px]">
+    <div class="h-[55vh] min-h-[480px] p-5 rounded-[60px] book-card-bg w-full max-w-110 relative flex flex-col items-center justify-between overflow-hidden">
+      <div class="text-center">
+        <div class="text-xl md:text-2xl text-[#7b1fa2] font-semibold tracking-wide">Our Special Memories 📖</div>
+      </div>
+      <div class="book-wrapper">
+        <div class="book-stage" id="flipBook">
+          <div class="page" data-page="0" style="z-index: 8;">
+            <div class="front custom-royal-cover">
+              <div class="cover-inner-frame">
+                <h2 class="cov-name">Birthday</h2><h2 class="cov-name">Book</h2>
+                <div class="cov-photo-box"><img src="profile.jpg" onerror="this.src='2.jpg'" alt="Cover Photo"></div>
+                <h3 class="cov-footer" id="cover-person-name">USHA</h3>
+              </div>
+            </div>
+            <div class="back">
+              <div class="book-photo-box"><img src="profile.jpg" onerror="this.src='2.jpg'" alt="Profile"></div>
+              <div class="caption-card"><div class="book-caption" id="cap-0">"You are my whole world ❤️"</div></div>
+            </div>
+          </div>
+          <div class="page" data-page="1" style="z-index: 7;">
+            <div class="front"><div class="book-photo-box"><img src="1.jpg" alt="1"></div><div class="caption-card"><div class="book-caption" id="cap-1">"Every smile of yours is magical ✨"</div></div></div>
+            <div class="back"><div class="book-photo-box"><img src="2.jpg" alt="2"></div><div class="caption-card"><div class="book-caption" id="cap-2">"Making memories with you 🌸"</div></div></div>
+          </div>
+          <div class="page" data-page="2" style="z-index: 6;">
+            <div class="front"><div class="book-photo-box"><img src="3.jpg" alt="3"></div><div class="caption-card"><div class="book-caption" id="cap-3">"Blessed to have you forever 💖"</div></div></div>
+            <div class="back"><div class="book-photo-box"><img src="4.jpg" alt="4"></div><div class="caption-card"><div class="book-caption" id="cap-4">"You make my heart beat faster 💕"</div></div></div>
+          </div>
+          <div class="page" data-page="3" style="z-index: 5;">
+            <div class="front"><div class="book-photo-box"><img src="5.jpg" alt="5"></div><div class="caption-card"><div class="book-caption" id="cap-5">"My favorite person in the world 🌹"</div></div></div>
+            <div class="back"><div class="book-photo-box"><img src="6.jpg" alt="6"></div><div class="caption-card"><div class="book-caption" id="cap-6">"My today and all my tomorrows ✨"</div></div></div>
+          </div>
+          <div class="page" data-page="4" style="z-index: 4;">
+            <div class="front"><div class="book-photo-box"><img src="7.jpg" alt="7"></div><div class="caption-card"><div class="book-caption" id="cap-7">"Queen of my heart 👑"</div></div></div>
+            <div class="back"><div class="book-photo-box"><img src="8.jpg" alt="8"></div><div class="caption-card"><div class="book-caption" id="cap-8">"Pure love and happiness 💖"</div></div></div>
+          </div>
+          <div class="page" data-page="5" style="z-index: 3;">
+            <div class="front"><div class="book-photo-box"><img src="9.jpg" alt="9"></div><div class="caption-card"><div class="book-caption" id="cap-9">"Forever is only good with you ❤️"</div></div></div>
+            <div class="back"><div class="book-photo-box"><img src="10.jpg" alt="10"></div><div class="caption-card"><div class="book-caption" id="cap-10">"Always and forever by your side, my love 💍"</div></div></div>
+          </div>
+          <div class="page" data-page="6" style="z-index: 2;">
+            <div class="front leather-cover"><div class="lastcover-box"><img src="lastcover.svg" alt="Forever"></div></div>
+            <div class="back leather-cover"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-[#7b1fa2] text-xs font-semibold py-1.5 flex items-center justify-center gap-1.5">
+        <span>Tap on Book to turn pages 📖</span>
+      </div>
+    </div>
+    <div class="mt-4 flex justify-center">
+      <button id="bookNextBtn" class="px-8 py-3 btn-theme font-bold text-base rounded-full btn-locked transition-all duration-300 active:scale-95 cursor-pointer flex items-center gap-2" onclick="goToScreen(5)">
+        <span>Hug Surprise</span><i class="fa-solid fa-heart text-[#ff2d55]"></i><i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+    <div id="lockToast">Please view all memory pages first! 📖💖</div>
+  </main>
+
+  <div id="screen-surprise" class="hidden fixed p-4 inset-0 z-45 flex flex-col justify-center items-center bg-black/35 backdrop-blur-md">
+    <div class="relative z-10 w-full max-w-110 rounded-[60px] p-6 text-center bg-gradient-to-b from-white/95 to-[#ffe1e8] card-shadow">
+      <img loading="lazy" alt="surprise" class="mx-auto w-44 md:w-52 object-contain pointer-events-none" src="hug.gif" />
+      <p id="finalHeading" class="text-xl text-[#9b3c49] font-semibold mt-2 drop-shadow-sm">Forever & Always Yours ❤️</p>
+      <div id="finalSubMessage" class="text-sm md:text-base text-[#9b3c49]/85 drop-shadow-sm mt-2 px-2">Every single moment with you is a blessing. May your beautiful smile shine bright forever!</div>
+      <div class="mt-5 flex justify-center">
+        <audio id="voiceAudio" preload="auto">
+          <source src="voice.mp3" type="audio/mpeg">
+          <source src="voice.m4a" type="audio/mp4">
+          <source src="voice.wav" type="audio/wav">
+          <source src="voice.aac" type="audio/aac">
+        </audio>
+        <button id="voicePlayBtn" class="px-8 py-3.5 btn-theme font-bold text-base rounded-full btn-pulse active:scale-95 transition-all duration-200 flex items-center gap-2.5 cursor-pointer" onclick="toggleVoiceNote()">
+          <span id="voiceIcon" class="text-lg">🎙️</span><span id="voiceText">Voice Note 💖</span>
+        </button>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-center z-20">
+      <button class="text-sm md:text-base font-bold px-8 py-3 rounded-full btn-theme btn-pulse active:scale-95 transition-all duration-200 flex items-center gap-2 cursor-pointer" onclick="replayAll()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path></svg> One More Time ✨
+      </button>
+    </div>
+  </div>
+
+  <div class="signature-badge">
+    <span>Crafted with</span>
+    <span class="video-heartbeat mx-0.5">
+      <svg class="w-4 h-4 text-[#ff2d55]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </span>
+    <span id="badgeAuthor" class="font-bold text-[#9b3c49]">Kuldeep</span>
+  </div>
+
+  <script src="config.js"></script>
+
+  <!-- OBFUSCATED & ANTI-TAMPER PROTECTED LOGIC -->
+  <script>
+    (function(_0xGuard){
+      const _0xChk = () => {
+        const _0xb = document['querySelector']('.signature-badge');
+        const _0xa = document['getElementById']('badgeAuthor');
+        if (!_0xb || !_0xa || _0xa['innerText']['trim']() !== 'Kuldeep' || window['getComputedStyle'](_0xb)['display'] === 'none' || window['getComputedStyle'](_0xb)['opacity'] === '0') {
+          document['body']['innerHTML'] = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#140810;color:#fff;text-align:center;padding:24px;"><h1 style="color:#ff4d6d;font-size:26px;margin-bottom:10px;">⚠️ License Protection Alert</h1><p style="color:#f2cbd6;font-size:15px;max-width:360px;line-height:1.5;margin-bottom:16px;">Modifying or removing the creator watermark is not permitted in this version.</p><div style="background:rgba(255,255,255,0.08);padding:14px 20px;border-radius:14px;border:1px solid rgba(255,77,109,0.3);"><p style="color:#ffccd5;font-size:14px;margin:0 0 4px 0;">Need an unlocked commercial copy?</p><p style="color:#fff;font-size:13px;margin:0;">Contact creator: <b>@kushaldeep01</b></p></div></div>';
+          document['body']['style']['overflow'] = 'hidden';
+        }
+      };
+      setInterval(_0xChk, 1000);
+    })();
+
+    function triggerSafeConfetti(_0xcf){try{if(typeof confetti==='function'){confetti(_0xcf);}}catch(_0xe){}}
+    function applyConfigSettings(){if(typeof BIRTHDAY_CONFIG!=='undefined'){const _0xc=BIRTHDAY_CONFIG;if(_0xc.recipientName){document.getElementById('pageTitle').innerText=`Happy Birthday ${_0xc.recipientName}! ❤️`;const _0xcn=document.getElementById('cover-person-name');if(_0xcn)_0xcn.innerText=_0xc.recipientName.toUpperCase();}if(_0xc.senderName){document.getElementById('badgeAuthor').innerText=_0xc.senderName;}if(_0xc.balloonWords){if(_0xc.balloonWords.word1)document.getElementById('txt-word1').innerText=_0xc.balloonWords.word1;if(_0xc.balloonWords.word2)document.getElementById('txt-word2').innerText=_0xc.balloonWords.word2;if(_0xc.balloonWords.word3)document.getElementById('txt-word3').innerText=_0xc.balloonWords.word3;if(_0xc.balloonWords.word4)document.getElementById('txt-word4').innerText=_0xc.balloonWords.word4;}if(_0xc.cakeScreen){if(_0xc.cakeScreen.topSubtitle)document.getElementById('cakeSubtitle').innerText=_0xc.cakeScreen.topSubtitle;if(_0xc.cakeScreen.birthDatePill)document.getElementById('cake-tier-date').innerText=_0xc.cakeScreen.birthDatePill;if(_0xc.cakeScreen.queenTextOnCake)document.getElementById('cakeQueenTextBox').innerText=_0xc.cakeScreen.queenTextOnCake;}if(_0xc.loveNoteModal){if(_0xc.loveNoteModal.title)document.getElementById('modalTitle').innerText=_0xc.loveNoteModal.title;if(_0xc.loveNoteModal.message)document.getElementById('modalMessage').innerText=_0xc.loveNoteModal.message;if(_0xc.loveNoteModal.footerBadge){document.getElementById('modalFooterBadge').innerHTML=`<span>${_0xc.loveNoteModal.footerBadge}</span>`;}}if(_0xc.bookCaptions&&_0xc.bookCaptions.length){_0xc.bookCaptions.forEach((_0xt,_0xi)=>{const _0xel=document.getElementById(`cap-${_0xi}`);if(_0xel)_0xel.textContent=`"${_0xt}"`;});}if(_0xc.finalScreen){if(_0xc.finalScreen.heading)document.getElementById('finalHeading').innerText=_0xc.finalScreen.heading;if(_0xc.finalScreen.subMessage)document.getElementById('finalSubMessage').innerText=_0xc.finalScreen.subMessage;}}}
+    applyConfigSettings();
+
+    function playPuffSound(){try{const _0xa=new(window.AudioContext||window.webkitAudioContext)();if(_0xa.state==='suspended')_0xa.resume();const _0xbs=_0xa.sampleRate*0.16;const _0xb=_0xa.createBuffer(1,_0xbs,_0xa.sampleRate);const _0xd=_0xb.getChannelData(0);for(let _0xi=0;_0xi<_0xbs;_0xi++){_0xd[_0xi]=(Math.random()*2-1)*Math.exp(-_0xi/(_0xbs*0.28));}const _0xn=_0xa.createBufferSource();_0xn.buffer=_0xb;const _0xf=_0xa.createBiquadFilter();_0xf.type='lowpass';_0xf.frequency.setValueAtTime(650,_0xa.currentTime);_0xf.frequency.exponentialRampToValueAtTime(80,_0xa.currentTime+0.16);const _0xg=_0xa.createGain();_0xg.gain.setValueAtTime(0.5,_0xa.currentTime);_0xg.gain.exponentialRampToValueAtTime(0.01,_0xa.currentTime+0.16);_0xn.connect(_0xf);_0xf.connect(_0xg);_0xg.connect(_0xa.destination);_0xn.start();}catch(_0xe){}}
+    function playPageFlipSound(){try{const _0xa=new(window.AudioContext||window.webkitAudioContext)();if(_0xa.state==='suspended')_0xa.resume();const _0xbs=_0xa.sampleRate*0.16;const _0xb=_0xa.createBuffer(1,_0xbs,_0xa.sampleRate);const _0xd=_0xb.getChannelData(0);for(let _0xi=0;_0xi<_0xbs;_0xi++){_0xd[_0xi]=(Math.random()*2-1)*Math.exp(-_0xi/(_0xbs*0.28));}const _0xn=_0xa.createBufferSource();_0xn.buffer=_0xb;const _0xf=_0xa.createBiquadFilter();_0xf.type='bandpass';_0xf.frequency.setValueAtTime(1600,_0xa.currentTime);_0xf.Q.setValueAtTime(1.8,_0xa.currentTime);const _0xg=_0xa.createGain();_0xg.gain.setValueAtTime(0.55,_0xa.currentTime);_0xg.gain.exponentialRampToValueAtTime(0.01,_0xa.currentTime+0.16);_0xn.connect(_0xf);_0xf.connect(_0xg);_0xg.connect(_0xa.destination);_0xn.start();}catch(_0xe){}}
+    function playRomanticMelody(){try{const _0xa=new(window.AudioContext||window.webkitAudioContext)();if(_0xa.state==='suspended')_0xa.resume();const _0xns=[{f:261.63,d:0.35,t:0.0},{f:329.63,d:0.35,t:0.4},{f:392.00,d:0.50,t:0.8},{f:523.25,d:0.70,t:1.3},{f:493.88,d:0.40,t:2.1},{f:392.00,d:0.40,t:2.6},{f:440.00,d:0.80,t:3.1},{f:349.23,d:0.40,t:4.0},{f:392.00,d:0.90,t:4.5}];_0xns.forEach(_0xn=>{const _0xosc=_0xa.createOscillator();const _0xg=_0xa.createGain();_0xosc.type='triangle';_0xosc.frequency.setValueAtTime(_0xn.f,_0xa.currentTime+_0xn.t);_0xg.gain.setValueAtTime(0.12,_0xa.currentTime+_0xn.t);_0xg.gain.exponentialRampToValueAtTime(0.001,_0xa.currentTime+_0xn.t+_0xn.d);_0xosc.connect(_0xg);_0xg.connect(_0xa.destination);_0xosc.start(_0xa.currentTime+_0xn.t);_0xosc.stop(_0xa.currentTime+_0xn.t+_0xn.d+0.1);});}catch(_0xe){}}
+
+    let poppedTotal = 0;
+    const isPopped = { 1: false, 2: false, 3: false, 4: false };
+    function pop(_0xid, _0xpx, _0xpy){if(isPopped[_0xid])return;isPopped[_0xid]=true;poppedTotal++;playPuffSound();const _0xb=document.getElementById('b-'+_0xid);if(_0xb)_0xb.style.display='none';const _0xw=document.getElementById('w-'+_0xid);if(_0xw)_0xw.classList.add('visible');const _0xc=document.querySelector('.card-shadow');if(_0xc){const _0xr=_0xc.getBoundingClientRect();triggerSafeConfetti({particleCount:35,spread:60,startVelocity:20,ticks:150,origin:{x:(_0xr.left+(_0xpx/100)*_0xr.width)/window.innerWidth,y:(_0xr.top+(_0xpy/100)*_0xr.height)/window.innerHeight},colors:['#ff8fab','#ffc2d1','#ff9289','#e9a8ff','#ffffff']});}if(poppedTotal>=4){setTimeout(()=>{const _0xbtn=document.getElementById('nextBtn');if(_0xbtn){_0xbtn.classList.remove('opacity-0','translate-y-3','pointer-events-none');_0xbtn.classList.add('opacity-100','translate-y-0');}},200);}}
+    function goToScreen(_0xsn){const _0xsc=[document.getElementById('screen-balloons'),document.getElementById('screen-cake'),document.getElementById('screen-gift'),document.getElementById('screen-book'),document.getElementById('screen-surprise')];_0xsc.forEach(_0xs=>{_0xs.classList.add('hidden');_0xs.classList.remove('flex','grid','screen-fade');});if(_0xsn===1){_0xsc[0].classList.remove('hidden');_0xsc[0].classList.add('flex','screen-fade');}else if(_0xsn===2){_0xsc[1].classList.remove('hidden');_0xsc[1].classList.add('flex','screen-fade');initMicBlowDetection();}else if(_0xsn===3){_0xsc[2].classList.remove('hidden');_0xsc[2].classList.add('flex','screen-fade');triggerSafeConfetti({particleCount:40,spread:60,origin:{y:0.6},colors:['#ff8fab','#ffc2d1','#fca5a5','#e9a8ff']});}else if(_0xsn===4){_0xsc[3].classList.remove('hidden');_0xsc[3].classList.add('flex','screen-fade');initBook();}else if(_0xsn===5){_0xsc[4].classList.remove('hidden');_0xsc[4].classList.add('flex','screen-fade');triggerSafeConfetti({particleCount:85,spread:110,origin:{y:0.5},colors:['#ff8fab','#d9b3ff','#f8da83','#38bdf8','#ffffff']});}}
+
+    let remainingCandles = 5;
+    const candleBlown = [false, false, false, false, false];
+    function extinguishCandle(_0xi){if(candleBlown[_0xi-1])return;candleBlown[_0xi-1]=true;remainingCandles--;playPuffSound();const _0xf=document.getElementById(`flame${_0xi}`);const _0xsm=document.getElementById(`smoke${_0xi}`);if(_0xf)_0xf.classList.add('blown');if(_0xsm)_0xsm.classList.add('active');const _0xr=_0xf.getBoundingClientRect();triggerSafeConfetti({particleCount:22,spread:45,startVelocity:16,origin:{x:(_0xr.left+_0xr.width/2)/window.innerWidth,y:(_0xr.top+_0xr.height/2)/window.innerHeight},colors:['#ffd166','#ff8fab','#ffffff']});if(remainingCandles===0){allCandlesFinished();}}
+    function allCandlesFinished(){playRomanticMelody();triggerSafeConfetti({particleCount:120,spread:90,origin:{y:0.6},colors:['#ff0055','#ff5000','#ffcc00','#00e676','#00b0ff','#ffffff']});const _0xd=(typeof BIRTHDAY_CONFIG!=='undefined'&&BIRTHDAY_CONFIG.cakeScreen&&BIRTHDAY_CONFIG.cakeScreen.birthDatePill)?BIRTHDAY_CONFIG.cakeScreen.birthDatePill:"25 November 2003";const _0xtg=(typeof BIRTHDAY_CONFIG!=='undefined'&&BIRTHDAY_CONFIG.cakeScreen&&BIRTHDAY_CONFIG.cakeScreen.birthDateTagline)?BIRTHDAY_CONFIG.cakeScreen.birthDateTagline:"The day my happiness was born ❤️";document.getElementById('instructionText').innerHTML=`<div class="flex flex-col items-center gap-0.5 py-1 w-full"><div class="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-[#fce7eb] text-[#9b3c49] font-bold text-xs shadow-sm border border-pink-200/60"><span>✨</span><span>${_0xd}</span><span>✨</span></div><span class="text-xs text-[#9b3c49] font-semibold mt-1">${_0xtg}</span></div>`;setTimeout(()=>{const _0xb=document.getElementById('cakeNextBtn');_0xb.classList.remove('opacity-0','translate-y-3','pointer-events-none');_0xb.classList.add('opacity-100','translate-y-0');},300);}
+
+    let micInitialized = false;
+    function initMicBlowDetection(){if(micInitialized||remainingCandles<=0)return;if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)return;navigator.mediaDevices.getUserMedia({audio:true}).then(_0xst=>{micInitialized=true;const _0xctx=new(window.AudioContext||window.webkitAudioContext)();const _0xan=_0xctx.createAnalyser();const _0xmic=_0xctx.createMediaStreamSource(_0xst);_0xmic.connect(_0xan);_0xan.fftSize=256;const _0xarr=new Uint8Array(_0xan.frequencyBinCount);let _0xlt=0;function _0xdet(){if(remainingCandles<=0){_0xst.getTracks().forEach(_0xt=>_0xt.stop());return;}_0xan.getByteFrequencyData(_0xarr);let _0xs=0;for(let _0xj=0;_0xj<20;_0xj++)_0xs+=_0xarr[_0xj];if((_0xs/20)>60&&Date.now()-_0xlt>300){_0xlt=Date.now();for(let _0xk=1;_0xk<=5;_0xk++){if(!candleBlown[_0xk-1]){extinguishCandle(_0xk);break;}}}requestAnimationFrame(_0xdet);}_0xdet();}).catch(()=>{});}
+
+    let isSliderOpen = false;
+    function handleBottomButtonClick(){if(!isSliderOpen){openLoveNote();}else{goToScreen(3);}}
+    function openLoveNote(){isSliderOpen=true;document.getElementById('loveNoteModal').classList.add('open');document.getElementById('cakeNextBtn').innerText="One Last Thing... 🎁";triggerSafeConfetti({particleCount:75,spread:100,origin:{y:0.5},colors:['#ff8fab','#d9b3ff','#f8da83','#38bdf8','#ffffff']});}
+    function closeLoveNote(){isSliderOpen=false;document.getElementById('loveNoteModal').classList.remove('open');document.getElementById('cakeNextBtn').innerText="Forever With You ❤️";}
+    function openGift(){playPuffSound();triggerSafeConfetti({particleCount:65,spread:80,origin:{y:0.55},colors:['#ff8fab','#ffc2d1','#fca5a5','#e9a8ff','#ffffff']});setTimeout(()=>{goToScreen(4);},350);}
+
+    let bookInitialized = false;
+    function initBook(){if(bookInitialized)return;bookInitialized=true;const _0xstg=document.getElementById('flipBook');const _0xpgs=Array.from(document.querySelectorAll('.page'));const _0xtot=_0xpgs.length;let _0xcur=0;const _0xhbtn=document.getElementById('bookNextBtn');const _0xtst=document.getElementById('lockToast');function _0xsh(){_0xtst.style.display='block';setTimeout(()=>{_0xtst.style.display='none';},2500);}_0xhbtn.addEventListener('click',function(_0xe){if(_0xcur<_0xtot){_0xe.preventDefault();_0xsh();}});function _0xfn(){if(_0xcur<_0xtot){_0xcur++;playPageFlipSound();_0xrnd();if(_0xcur===_0xtot){triggerSafeConfetti({particleCount:130,spread:85,origin:{y:0.6}});}}}function _0xfp(){if(_0xcur>0){_0xcur--;playPageFlipSound();_0xrnd();}}_0xstg.addEventListener('click',(_0xe)=>{const _0xr=_0xstg.getBoundingClientRect();if(_0xe.clientX-_0xr.left>_0xr.width/2){_0xfn();}else{_0xfp();}});function _0xrnd(){if(_0xcur===0||_0xcur===_0xtot){_0xstg.style.transform=`translateX(0%)`;}else{_0xstg.style.transform=`translateX(50%)`;}_0xpgs.forEach((_0xp,_0xidx)=>{const _0xfl=_0xidx<_0xcur;_0xp.style.transform=_0xfl?'rotateY(-180deg)':'rotateY(0deg)';setTimeout(()=>{_0xp.style.zIndex=_0xfl?_0xidx+1:_0xtot-_0xidx;},250);});if(_0xcur===_0xtot){_0xhbtn.classList.remove('btn-locked');_0xhbtn.classList.add('btn-pulse');}else{_0xhbtn.classList.add('btn-locked');_0xhbtn.classList.remove('btn-pulse');}}_0xrnd();}
+
+    let isVoicePlaying = false;
+    function toggleVoiceNote(){const _0xa=document.getElementById('voiceAudio');const _0xic=document.getElementById('voiceIcon');const _0xtx=document.getElementById('voiceText');if(!isVoicePlaying){_0xa.currentTime=0;_0xa.muted=false;const _0xp=_0xa.play();if(_0xp!==undefined){_0xp.then(()=>{isVoicePlaying=true;_0xic.innerText="⏸️";_0xtx.innerText="Playing... 💕";triggerSafeConfetti({particleCount:45,spread:60,origin:{y:0.6}});}).catch(_0xe=>{_0xa.src="voice.mp3";_0xa.play().then(()=>{isVoicePlaying=true;_0xic.innerText="⏸️";_0xtx.innerText="Playing... 💕";}).catch(_0xerr=>{alert("वॉइस नोट प्ले नहीं हो सका। कृपया सुनिश्चित करें कि प्रोजेक्ट फ़ोल्डर में 'voice.mp3' या 'voice.m4a' मौजूद है!");});});}}else{_0xa.pause();isVoicePlaying=false;_0xic.innerText="🎙️";_0xtx.innerText="Voice Note 💖";}_0xa.onended=()=>{isVoicePlaying=false;_0xic.innerText="🎙️";_0xtx.innerText="Voice Note 💖";};}
+    function replayAll(){location.reload();}
+  </script>
+</body>
+</html>
